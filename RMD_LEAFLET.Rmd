@@ -1,0 +1,29 @@
+---
+title: "R Markdown and Leaflet assignment"
+author: "JMTX"
+date: "`r format(Sys.time(), '%d/%m/%y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Synopsis
+
+This work consists in building a map with leaflet in an html document. I choose to show the adress of an asian restaurant in Paris in France on the map.
+
+remark: the date is in french format day/month/year
+
+```{r map_fr, warning=FALSE}
+#load leaflet package
+library(leaflet)
+
+#build the map with the marker
+fr_map <- leaflet() %>% 
+          addTiles() %>%
+          addMarkers(lat= 48.8429778, lng= 2.3633404, popup="Pause Bobun (vietnamese restaurant") # add marker at the adress of the restaurant
+
+#show the map
+fr_map  
+```
